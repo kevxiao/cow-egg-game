@@ -1,0 +1,23 @@
+application: cow-egg-game
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+
+- url: /components
+  static_dir: components
+
+- url: /stylesheets
+  static_dir: stylesheets
+
+- url: /scripts
+  static_dir: scripts
+
+- url: /.*
+  script: game.application
+
+libraries:
+- name: webapp2
+  version: latest
