@@ -1,0 +1,128 @@
+
+core-pages {
+  width: 800px;
+  height: 100%;
+  -webkit-user-select: none;
+  border-radius: 0px;
+
+}
+
+core-pages > div {
+  display: flex vertical;
+  text-align: center;
+  align-items: left;
+  /*font-size: 2em;*/
+  /*border-radius: inherit;*/
+}
+
+core-pages.main > .home {
+  /*background-color: #D6FFAD;*/
+  width: 100%;
+  /*top:10%;*/
+  padding: 1em;
+  /*border-radius: 1em;*/
+  position: absolute;
+  /*margin-left: 1.6em;*/
+  /*margin-right: -20%;*/
+  /*transform: translate(-50%, -50%)*/
+}
+
+core-pages.change {
+  border: none;
+  margin-left: 2em;
+}
+core-pages.change > div {
+  opacity: 0;
+  -webkit-transform: translate3d(-100px, 0, 0) scale(0.9);
+  transform: translate3d(-100px, 0, 0) scale(0.9);
+  transition: all 1s cubic-bezier(.03,.56,.7,.98);
+  /*color: white;*/
+}
+
+core-pages.change > .one {
+  background-image: url("http://placehold.it/800x600");
+  background-repeat: no-repeat;
+  padding: 40px;
+}
+
+core-pages.change > .two {
+  background-image: url("http://placehold.it/800x600");
+  background-repeat: no-repeat;
+  padding: 40px;
+}
+
+core-pages.change > .three {
+  background-image: url("http://placehold.it/800x600");
+  background-repeat: no-repeat;
+  padding: 40px;
+}
+
+core-pages.change > .four {
+  background-image: url("http://placehold.it/800x600");
+  background-repeat: no-repeat;
+  padding: 40px;
+}
+
+core-pages.change > .five {
+  background-image: url("http://placehold.it/800x600");
+  background-repeat: no-repeat;
+  padding: 40px;
+}
+
+core-pages.change .core-selected + div {
+  -webkit-transform: translate3d(100px, 0, 0) scale(0.9);
+  transform: translate3d(100px, 0, 0) scale(1);
+}
+
+core-pages.change .core-selected {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+core-pages.change div.begin {
+  -webkit-transform: translate3d(100px, 0, 0) scale(0.9);
+  transform: translate3d(100px, 0, 0) scale(0.9);
+}
+
+
+
+.block1 {
+  background-image: url("http://placehold.it/800x600");
+  background-repeat: no-repeat;
+  padding: 40px;
+}
+.block2 {
+  background-image: url("http://placehold.it/800x600");
+  background-repeat: no-repeat;
+  padding: 40px;
+}
+.general-left {
+  font-size: 2em;
+  position: relative;
+  top: 20%;
+  margin-right:50%;
+}
+.specific-left {
+  font-size: 1.2em;
+  position: relative;
+  top: 20%;
+  margin-right: 50%;
+  /*left: 20%;*/
+}
+.general-right {
+  font-size: 2em;
+  position: relative;
+  top: 20%;
+  margin-left:50%;
+}
+.specific-right {
+  font-size: 1.2em;
+  position: relative;
+  top: 20%;
+  margin-left: 50%;
+}
+
+#pages {
+  margin: 0 auto;
+}

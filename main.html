@@ -8,8 +8,9 @@
     <link rel="import" href="components/paper-tabs/paper-tabs.html">
     <link rel="import" href="components/core-pages/core-pages.html">
     <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/pagestyle.css">
   </head>
-  <body>
+  <body unresolved>
 
     <paper-tabs id="tabs" selected="0" flex>
       <paper-tab>Home</paper-tab>
@@ -18,12 +19,82 @@
 
     </paper-tabs>
 
-    <core-pages id="pages" selected="0" flex>
-      <div>Page 1</div>
-      <div>Page 2</div>
-      <div>Page 3</div>
+    <core-pages id="pages" class="main" selected="0">
+      <div class="home" >
+        <div class="block1">
+        <p class="general-left"> <!-- <img src="http://placehold.it/400x500" class="align-right" /> -->
+          <b>"Lorem ipsum dolor sit amet</b> 
+        </p>
+        <hr/>
+        <p class="specific-left">
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+        </p>
+        </div>
+
+        <div class="block2">
+          <p class = "general-right"> <b>
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          </b> 
+          </p>
+          <p class="specific-right">
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+          </p>
+        </div>
+      </div>
+      <div class="game">Page 2</div>
+      <div class="about">
+        <core-pages id="aboutpages" class="change" selected="0">
+          <div class="one">
+            <p class = "general-right"> <b>one
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            </b> 
+            </p>
+            <p class="specific-right">
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+            </p>
+          </div>
+          <div class="two">
+            <p class = "general-right"> <b>two
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            </b> 
+            </p>
+            <p class="specific-right">
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+            </p>
+          </div>
+          <div class="three">
+            <p class = "general-right"> <b>three
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            </b> 
+            </p>
+            <p class="specific-right">
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+            </p>
+          </div>
+          <div class="four">
+            <p class="general-right"> <b>four
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            </b> 
+            </p>
+            <p class="specific-right">
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+            </p>
+          </div>
+          <div class="five">
+            <p class="general-right"> <b>
+            5"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            </b> 
+            </p>
+            <p class="specific-right">
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+            </p>
+          </div>
+        </core-pages>
+
+      </div>
     </core-pages>
     
     <script src="scripts/binding.js"></script>
+    <script src="scripts/next.js"></script>
   </body>
 </html>
