@@ -82,4 +82,7 @@ class Units(GameElement):
 	def setMoveSpeed(self, m):
 		self.move_speed=m
 
+	def takeDamage(self, d):
+		self.health-=d
+
 	def move(self, x, y):
