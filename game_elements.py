@@ -44,9 +44,45 @@ class GameElement(object):
 		else:
 			return false
 
+	@abstractmethod
+	def setLocation(self, x, y):
+		self.x_location=x
+		self.y_location=y
+
+	@abstractmethod
+	def setHealth(self, h):
+		self.health=h
+
+	def getHealth(self):
+		return self.health
+
+	def takeDamage(self, d):
+		self.health-=d
+
 class Structures(GameElement):
 
 	__metaclass__ = ABCMeta
 
 	@abstractmethod
-	def 
+	def setArmour(self, a):
+		self.armour=a
+
+	def takeDamage(self, d):
+		if d>self.armour:
+			self.health=self.health-(d-self.armour)
+		else:
+			self.health-=1
+
+
+class Units(GameElement):
+
+	__metaclass__ = ABCMeta
+
+	@abstractmethod
+	def setMoveSpeed(self, m):
+		self.move_speed=m
+
+	def takeDamage(self, d):
+		self.health-=d
+
+	def move(self, x, y):
