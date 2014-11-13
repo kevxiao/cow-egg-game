@@ -49,43 +49,44 @@ core-pages.change > div {
 }
 
 core-pages.change > .one {
-  background-image: url("http://placehold.it/4096x2160");
+  background-image: url("http://i.imgur.com/yVRPwCm.jpg");
   background-size: cover;
-  background-position: center center;
+  background-position: center top;
   background-repeat: no-repeat;
   padding: 5%;
 }
 
 core-pages.change > .two {
-  background-image: url("http://placehold.it/4096x2160");
+  background-image: url("http://i.imgur.com/e44XksA.jpg");
   background-size: cover;
-  background-position: center center;
+  background-position: right center;
   background-repeat: no-repeat;
   padding: 5%;
 }
 
 core-pages.change > .three {
-  background-image: url("http://placehold.it/4096x2160");
-  background-size: cover;
-  background-position: center center;
+  background-image: url("http://i.imgur.com/1FlBO4C.png");
+  background-size: 75% 100%;
+  /*background-position: center top;*/
   background-repeat: no-repeat;
   padding: 5%;
 }
 
 core-pages.change > .four {
-  background-image: url("http://placehold.it/4096x2160");
+  background-image: url("http://i.imgur.com/AibpzZA.jpg");
+  opacity: 0.8;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  padding: 5%;
+  padding:1%;
 }
 
 core-pages.change > .five {
-  background-image: url("http://placehold.it/4096x2160");
+  background-image: url("http://i.imgur.com/PE2KMIp.jpg");
   background-size: cover;
-  background-position: center center;
+  background-position: left center;
   background-repeat: no-repeat;
-  padding: 5%;
+  padding: 1%;
 }
 
 core-pages.change .core-selected + div {
@@ -129,8 +130,8 @@ core-pages.change div.begin {
   position: relative;
   top: 20%;
   margin-right: 50%;
-  /*left: 20%;*/
 }
+
 .general-right {
   font-size: 2em;
   position: relative;
@@ -144,6 +145,76 @@ core-pages.change div.begin {
   margin-left: 50%;
 }
 
+.gen-about1 {
+  color: white;
+  font-size: 2em;
+  position: relative;
+  top: 20%;
+  margin-right:70%;
+}
+.spec-about1 {
+  color: white;
+  font-size: 1.2em;
+  position: relative;
+  top: 20%;
+  margin-right: 70%;
+}
+
+.gen-about2 {
+  color: white;
+  font-size: 2em;
+  position: relative;
+  top: 20%;
+  margin-left:60%;
+}
+.spec-about2 {
+  font-size: 1.2em;
+  /*color:white;*/
+  /*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
+  position: relative;
+  top: 20%;
+  margin-left: 60%;
+}
+
+.gen-about3 {
+  font-size: 2em;
+  position: relative;
+  top: 20%;
+  margin-left:75%;
+}
+.spec-about3 {
+  font-size: 1.2em;
+  position: relative;
+  top: 20%;
+  margin-left: 75%;
+}
+
+.gen-about4 {
+  font-size: 2em;
+  position: relative;
+  top: 5%;
+  /*margin-left:75%;*/
+}
+.spec-about4 {
+  font-size: 1.2em;
+  color:white;
+  position: relative;
+  margin-top: 5%;
+  margin-left:5%;
+  margin-right: 60%;
+}
+.gen-about5 {
+  font-size: 2em;
+  position: relative;
+  top: 20%;
+  margin-right:75%;
+}
+.spec-about5 {
+  font-size: 1.2em;
+  position: relative;
+  top: 20%;
+  margin-right: 75%;
+}
 #pages {
   margin: 0 auto;
 }
