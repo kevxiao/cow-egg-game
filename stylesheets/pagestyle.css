@@ -27,7 +27,7 @@ core-pages.main > .home {
   /*margin-right: -20%;*/
   /*transform: translate(-50%, -50%)*/
 }
-core-pages.game {
+core-pages.game > .ingame {
   width: 800pt;
 }
 

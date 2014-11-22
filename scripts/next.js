@@ -19,9 +19,13 @@ var mapFlag = 1;
 document.querySelector('.start').onclick = function(e) {
     if (tabs.selected == 1) {
         gamepages.selected = 1; // show the ingame page
-        gamehome.style.display = "none"; // change depending on the current page
-        if (mapFlag){
+        if (mapFlag){ // make map only once
             createmap();
+            startLoading();
+            gamehome.style.display = "none"; // change depending on the current page
+            // when sone loading, display map
+            var map = document.getElementById("map"); 
+            // map.style.display = "";
             mapClickListener();
             mapFlag = 0;
         }

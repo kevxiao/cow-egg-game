@@ -1,9 +1,7 @@
 // makes the map for the game
 var map = document.getElementById("map"); 
-// var row = document.createAttribute('row'); // row of the hexagon
-// var col = document.createAttribute('col'); // column of the hexagon
 function createmap() {
-    // console.log("in createmap")
+    // map.style.display = "none";
     var length = 5, i = 0, j = 0, rowEle, space, ripple;
     for (i = 0; i < length; i = i + 1) {
         rowEle = document.createElement('OL');
@@ -26,3 +24,5 @@ function createmap() {
         }
     }
 }
+
+// https://www.polymer-project.org/components/paper-dropdown/demo.html
