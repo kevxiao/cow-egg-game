@@ -21,3 +21,8 @@ paper-button {
   width: 20%;
   margin: 0 auto;
 }
+
+.hex > paper-ripple {
+  /*overflow: hidden;*/
+  
+}

@@ -1,23 +1,29 @@
 // makes the map for the game
-var map = document.getElementById("map");
+var map = document.getElementById("map"); 
+// var row = document.createAttribute('row'); // row of the hexagon
+// var col = document.createAttribute('col'); // column of the hexagon
 function createmap() {
-    console.log("in createmap")
-    var length = 5, i = 0, j = 0, row, space;
+    // console.log("in createmap")
+    var length = 5, i = 0, j = 0, rowEle, space, ripple;
     for (i = 0; i < length; i = i + 1) {
-        console.log("in i");
-        console.log(i);
-        row = document.createElement('OL');
-        map.appendChild(row);
+        rowEle = document.createElement('OL');
+        map.appendChild(rowEle);
         if (i % 2 === 0) {
-            row.className = 'even';
+            rowEle.className = 'even';
         } else {
-            row.className = 'odd';
+            rowEle.className = 'odd';
         }
+        var row = document.createAttribute('row'); // row of the hexagon
+        row.value = i;
+        rowEle.setAttributeNode(row);
         for (j = 0; j < length; j = j + 1) {
             console.log("in j");
             space = document.createElement('LI');
-            row.appendChild(space);
+            rowEle.appendChild(space);
             space.className = 'hex';
+            var col = document.createAttribute('col'); // column of the hexagon
+            col.value = j;
+            space.setAttributeNode(col);
         }
     }
 }
