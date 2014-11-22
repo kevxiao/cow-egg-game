@@ -7,28 +7,30 @@
     <script type="text/javascript" src="/_ah/channel/jsapi"></script>
     <link rel="import" href="components/font-roboto/roboto.html">
     <link rel="import" href="components/paper-tabs/paper-tabs.html">
+    <link rel="import" href="components/paper-button/paper-button.html">
     <link rel="import" href="components/core-pages/core-pages.html">
     <link rel="stylesheet" href="stylesheets/style.css">
     <link rel="stylesheet" href="stylesheets/pagestyle.css">
+    <link rel="stylesheet" href="stylesheets/gamestyle.css">
+    <link rel="stylesheet" href="stylesheets/map.css">
   </head>
   <body unresolved>
-
-    <paper-tabs id="tabs" selected="0" flex>
-      <paper-tab>Home</paper-tab>
-      <paper-tab>Cow Kingdom: Easter Egg Rampage</paper-tab>
-      <paper-tab>About</paper-tab>
-
-    </paper-tabs>
-
+    <!-- <core-header-panel> -->
+      <paper-tabs id="tabs" selected="0" flex>
+        <paper-tab>Home</paper-tab>
+        <paper-tab>Cow Kingdom: Easter Egg Rampage</paper-tab>
+        <paper-tab>About</paper-tab>
+      </paper-tabs>
+    <!-- </core-header-panel> -->
     <core-pages id="pages" class="main" selected="0">
       <div class="home" >
         <div class="block1">
         <p class="general-left"> <!-- <img src="http://placehold.it/400x500" class="align-right" /> -->
-          <b>"Lorem ipsum dolor sit amet</b> 
+          <b>Cow Kingdom: Easter Egg Rampage</b> 
         </p>
         <!-- <hr/> -->
         <p class="specific-left">
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+          A real-time-strategy game, with a twist. You can choose to see your enemy or not.
         </p>
         </div>
 
@@ -42,60 +44,72 @@
           </p>
         </div>
       </div>
-      <div class="game">Page 2</div>
-      <div class="about">
-        <core-pages id="aboutpages" class="change" selected="0">
-          <div class="one">
-            <p class = "gen-about1"> <b>
-            Kevin Xiao
-            </b> 
-            </p>
-            <p class="spec-about1">
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
-            </p>
-          </div>
-          <div class="two">
-            <p class = "gen-about2"> <b>
-            Kim Usi
-            </b> 
-            </p>
-            <p class="spec-about2">
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
-            </p>
-          </div>
-          <div class="three">
-            <p class = "gen-about3"> <b>
-            Barbara Xu
-            </b> 
-            </p>
-            <p class="spec-about3">
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
-            </p>
-          </div>
-          <div class="four">
-            <p class="gen-about4"> <b>
-            Cynthia Huang
-            </b> 
-            </p>
-            <p class="spec-about4">
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
-            </p>
-          </div>
-          <div class="five">
-            <p class="gen-about5"> <b>
-            Alice Ma
-            </b> 
-            </p>
-            <p class="spec-about5">
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
-            </p>
-          </div>
-        </core-pages>
+    </core-pages>
 
+    <core-pages id="gamepages" class="game" selected="0">
+      <div id="gamehome" class="gamehome">
+        <img class="logo" src="http://i.imgur.com/NzsInc6.png"></img>
+        <paper-button class="start" vertical layout center>START GAME</paper-button>
+      </div>
+      <div class="ingame">
+        <!-- <paper-button>TEST</paper-button> -->
+        <div id="map">
+        </div>
       </div>
     </core-pages>
-    
+
+    <core-pages id="aboutpages" class="change" selected="0">
+      <div class="one">
+        <p class="gen-about1"> <b>
+        Kevin Xiao: The Demon Hunting Code Master
+        </b> 
+        </p>
+        <p class="spec-about1">
+          Has lead hundreds of League of Legends and Starcraft teams to victory and can produce thousands of lines of code to commandeer your computers
+        </p>
+      </div>
+      <div class="two">
+        <p class="gen-about2"> <b>
+        Kim Usi: Professional Space Software Ninja
+        </b> 
+        </p>
+        <p class="spec-about2">
+          Has relevant experiences in game development and pair programming
+        </p>
+      </div>
+      <div class="three">
+        <p class="gen-about3"> <b>
+        Barbara Xu: Experienced Marketing Warrior
+        </b> 
+        </p>
+        <p class="spec-about3">
+          Has critical thinking and analyzing skills as well as marketing experience
+        </p>
+      </div>
+      <div class="four">
+        <p class="gen-about4"> <b>
+        Cynthia Huang: Project-Oriented Business Expert
+        </b> 
+        </p>
+        <p class="spec-about4">
+          Has relevant technical project experience during co-op and business analytical skills developed through new venture projects
+        </p>
+      </div>
+      <div class="five">
+        <p class="gen-about5"> <b>
+        Alice Ma: Innovative Computing Champion
+        </b> 
+        </p>
+        <p class="spec-about5">
+          Has critical analysis skills, programming knowledge, effective writing skills
+        </p>
+      </div>
+    </core-pages>
+  
+
     <script src="scripts/binding.js"></script>
-    <script src="scripts/next.js"></script>
+    <script type="text/javascript" src="scripts/createmap.js" ></script>
+    <script type="text/javascript" src="scripts/next.js" ></script>
+
   </body>
 </html>

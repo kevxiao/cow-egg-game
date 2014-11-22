@@ -1,7 +1,7 @@
 
 core-pages {
-  width:100%;
-  height: 100%;
+  /*width:100%;*/
+  /*height: 100%;*/
   -webkit-user-select: none;
   border-radius: 0px;
 
@@ -15,15 +15,7 @@ core-pages > div {
   /*border-radius: inherit;*/
 }
 
-core-pages.main > .about {
-  /*position:absolute; */
-  height:100%; 
-  width:100%; 
-  overflow:hidden;
-  /*left:0; */
-  /*top:0; */
-  /*z-index:1;*/
-}
+
 core-pages.main > .home {
   /*background-color: #D6FFAD;*/
   width: 100%;
@@ -35,8 +27,14 @@ core-pages.main > .home {
   /*margin-right: -20%;*/
   /*transform: translate(-50%, -50%)*/
 }
+core-pages.game {
+  width: 800pt;
+}
 
 core-pages.change {
+  height:100%; 
+  width:100%; 
+  overflow:hidden;
   border: none;
   /*margin-left: 2em;*/
 }
@@ -62,6 +60,7 @@ core-pages.change > .two {
   background-position: right center;
   background-repeat: no-repeat;
   padding: 5%;
+  padding-top:20%;
 }
 
 core-pages.change > .three {
@@ -74,7 +73,7 @@ core-pages.change > .three {
 
 core-pages.change > .four {
   background-image: url("http://i.imgur.com/AibpzZA.jpg");
-  opacity: 0.8;
+  /*opacity: 0.8;*/
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -161,16 +160,16 @@ core-pages.change div.begin {
 }
 
 .gen-about2 {
-  color: white;
   font-size: 2em;
   position: relative;
   top: 20%;
   margin-left:60%;
 }
 .spec-about2 {
-  font-size: 1.2em;
-  /*color:white;*/
-  /*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
+  font-size: 1.3em;
+  /*font-weight:500;*/
+  color:white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   position: relative;
   top: 20%;
   margin-left: 60%;
@@ -218,3 +217,12 @@ core-pages.change div.begin {
 #pages {
   margin: 0 auto;
 }
+
+/*paper-button.start {
+  color: #4285f4;
+}*/
+
+/*paper-button[raised].start {
+  background: #4285f4;
+  color: #fff;
+}*/
