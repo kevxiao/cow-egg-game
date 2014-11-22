@@ -214,3 +214,12 @@ core-pages.change div.begin {
 #pages {
   margin: 0 auto;
 }
+
+paper-button.start {
+  color: #4285f4;
+}
+
+paper-button[raised].start {
+  background: #4285f4;
+  color: #fff;
+}
