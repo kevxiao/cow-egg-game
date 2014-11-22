@@ -1,4 +1,4 @@
-from multiprocessing import Process
+from google.appengine.api import background_thread
 
 import time
 
@@ -122,8 +122,7 @@ class Farm(Structures):
 	# initialize farm with team, all teams in game, x position and y position
 	def __init__(self, t, all_t, x, y):
 		super(Farm, self).__init__(self, t, all_t, x, y, 100, "cow", 1)
-		p = Process(target=self.gatherResource)
-		p.start()
+		p = background_thread.start_new_background_thread(target=self.gatherResource)
 
 	# increase resources 
 	def gatherResource(self):
