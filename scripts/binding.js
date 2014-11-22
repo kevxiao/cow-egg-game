@@ -3,7 +3,7 @@ var pages = document.getElementById('pages');
 var tabs = document.getElementById('tabs');
 var aboutpages = document.getElementById('aboutpages');
 var gamepages = document.getElementById('gamepages');
-
+var gamehome = document.getElementById('gamehome');
 tabs.addEventListener('core-select', function() {
   // home page selected
   if(tabs.selected == 0){ 
@@ -16,6 +16,7 @@ tabs.addEventListener('core-select', function() {
     pages.style.display = "none";
     gamepages.selected = 0;
     gamepages.style.display = "";
+    gamehome.style.display = "";
     aboutpages.style.display = "none";
   } // about page selected
   else if (tabs.selected == 2){

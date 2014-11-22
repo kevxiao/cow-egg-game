@@ -12,4 +12,13 @@ document.querySelector('.change').onclick = function(e) {
         });
     }
 };
-
+// Switch pages on game page
+var gamepages = document.getElementById('gamepages');
+var gamehome = document.getElementById('gamehome');
+document.querySelector('.start').onclick = function(e) {
+    if (tabs.selected == 1) {
+        gamepages.selected = 1; // show the ingame page
+        gamehome.style.display = "none"; // change depending on the current page
+        createmap();
+    }
+};

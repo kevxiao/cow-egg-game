@@ -27,6 +27,9 @@ core-pages.main > .home {
   /*margin-right: -20%;*/
   /*transform: translate(-50%, -50%)*/
 }
+core-pages.game {
+  width: 800pt;
+}
 
 core-pages.change {
   height:100%; 
@@ -215,11 +218,11 @@ core-pages.change div.begin {
   margin: 0 auto;
 }
 
-paper-button.start {
+/*paper-button.start {
   color: #4285f4;
-}
+}*/
 
-paper-button[raised].start {
+/*paper-button[raised].start {
   background: #4285f4;
   color: #fff;
-}
+}*/

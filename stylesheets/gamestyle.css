@@ -17,5 +17,7 @@
   /*width: 20%;*/
 }
 paper-button {
-  color: #4285f4;
+  background: #99FF66;
+  width: 20%;
+  margin: 0 auto;
 }
