@@ -5,6 +5,7 @@ from google.appengine.ext import db
 from google.appengine.api import background_thread
 
 import webapp2
+import json
 
 class GamePage(webapp2.RequestHandler):
 
@@ -17,6 +18,10 @@ class GamePage(webapp2.RequestHandler):
 			self.response.out.write(template.render("main.html", {}))
 		else:
 			self.redirect(users.create_login_url(self.request.uri))
+
+	def post(self):
+		row = self.request.get('row')
+		col = self.request.get('col')
 
 application = webapp2.WSGIApplication([
 	('/', GamePage),
