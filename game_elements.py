@@ -1,3 +1,5 @@
+from multiprocessing import Process
+
 import time
 
 # class to set up each team
@@ -13,19 +15,26 @@ class Team(object):
 	def getPlayer1(self):
 		return player1
 
-	#return player 2 of the team
+	# return player 2 of the team
 	def getPlayer2(self):
 		return player2
 
-	def gain_resource(self, a):
+	# increase resource for the team
+	def gainResource(self, a):
 		self.resource += a
 
-	def lose_resource(self, a):
+	# decrease resource for the team
+	def loseResource(self, a):
 		self.resource -= a
+
+class Map(object):
+
+
 
 # parent class for game elements
 class GameElement(object):
 
+	# initialize team with team, all teams in game, x position, y position, health and race
 	def __init__(self, t, all_t, x, y, h, r):
 		self.belong = t
 		self.vision = {}				# dictionary of players with vision
@@ -38,6 +47,10 @@ class GameElement(object):
 		self.y_location = y 			# set the starting y location
 		self.health = h 				# set the health
 		self.race = r 					# set the race
+
+	# check the team that the element belongs to
+	def belongsTo(self):
+		return self.belong
 
 	# checks if player has vision of the element
 	def hasVision(self, u):
@@ -60,6 +73,7 @@ class GameElement(object):
 # parent class for structures
 class Structures(GameElement):
 
+	# initialize structure with everything from game element plus armour value
 	def __init__(self, t, all_t, x, y, h, r, a):
 		self.armour = a 				# armour value to reduce damage
 		super(Structures, self).__init__(t, all_t, x, y, h, r):
@@ -74,6 +88,7 @@ class Structures(GameElement):
 # parent class for units
 class Units(GameElement):
 
+	# initialize unit with everything from game element plus move speed value
 	def __init__(self, t, all_t, x, y, h, r, m):
 		self.move_speed = m 			# time to move one grid unit
 		super(Units, self).__init__(t, all_t, x, y, h, r):
@@ -101,22 +116,67 @@ class Units(GameElement):
 		else:
 			raise MoveError("User does not have control")
 
+# class for farm structure (resource producing structure for cow race)
 class Farm(Structures):
 
+	# initialize farm with team, all teams in game, x position and y position
 	def __init__(self, t, all_t, x, y):
 		super(Farm, self).__init__(self, t, all_t, x, y, 100, "cow", 1)
+		p = Process(target=self.gatherResource)
+		p.start()
 
-	def 
+	# increase resources 
+	def gatherResource(self):
+		while True: 
+			time.sleep(2)
+			self.belong.gainResource(5)
 
+# class for barn structure (unit making structure for cow race)
 class Barn(Structures):
 
+	# dictionary of all units that the barn makes with their corresponding build time and resource cost
+	units = {"builder" : {"time" : 15, "resource" : 20}, "fighter" : {"time" : 23, "resource" : 30}}
+
+	# initialize barn with team, all teams in game, x position and y position
 	def __init__(self, t, all_t, x, y):
 		super(Farm, self).__init__(self, t, all_t, x, y, 150, "cow", 2)
-		self.units = {"builder" : {"time" : 15, "resource" : 20}, "fighter" : {"time" : 23, "resource" : 30}, "magic" : {"time" : 27, "resource" : 20}}
 
+	# makes a new unit
 	def makeCow(self, u, t):
 		if super(Barn, self).hasControl(u):
-			if self.belong.resource >= self.units[t]["resource"]:
-				self.belong.lose_resource(self.units[t]["resource"])
-				time.sleep(self.units[t]["time"])
-				
+			if self.belong.resource >= units[t]["resource"]:
+				self.belong.loseResource(units[t]["resource"])
+				time.sleep(units[t]["time"])
+				# insert code to put unit on map
+
+# class for the builder unit
+class Builder(Units):
+
+	# dictionary of all structures that the builder makes with their corresponding build time and resource cost
+	structures = {"Farm" : {"time" : 15, "resource" : 20}, "Barn" : {"time" : 25, "resource" : 25}}
+
+	# initialize builder with team, all teams in game, x position and y position
+	def __init__(self, t, all_t, x, y):
+		super(Builder, self).__init__(self, t, all_t, x, y, 40, "cow", 1.5)
+
+	# make a new structure
+	def makeStruct(self, u, t):
+		if super(Builder, self).hasControl(u):
+			if self.belong.resource >= structures[t]["resource"]:
+				self.belong.loseResource(structures[t]["resource"])
+				time.sleep(structures[t]["time"])
+				# insert code to put structure on map
+
+# class for the fighter unit
+class Fighter(Units):
+
+	# initialize fighter with team, all teams in game, x position and y position
+	def __init__(self, t, all_t, x, y):
+		super(Builder, self).__init__(self, t, all_t, x, y, 70, "cow", 1.2)
+		self.damage = 10
+
+	# attack enemies on the same location
+	def attack(self, u):
+		# for all units on the same location
+			if ele.belongsTo() != self.belongs:
+				ele.takeDamage(self.damage)
