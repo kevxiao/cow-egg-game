@@ -22,6 +22,7 @@ document.querySelector('.start').onclick = function(e) {
         gamehome.style.display = "none"; // change depending on the current page
         if (mapFlag){
             createmap();
+            mapClickListener();
             mapFlag = 0;
         }
     }

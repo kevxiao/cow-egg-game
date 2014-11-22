@@ -13,17 +13,16 @@ function createmap() {
         } else {
             rowEle.className = 'odd';
         }
-        var row = document.createAttribute('row'); // row of the hexagon
-        row.value = i;
-        rowEle.setAttributeNode(row);
         for (j = 0; j < length; j = j + 1) {
-            console.log("in j");
             space = document.createElement('LI');
             rowEle.appendChild(space);
             space.className = 'hex';
             var col = document.createAttribute('col'); // column of the hexagon
+            var row = document.createAttribute('row'); // row of the hexagon
+            row.value = i;
             col.value = j;
             space.setAttributeNode(col);
+            space.setAttributeNode(row);
         }
     }
 }
