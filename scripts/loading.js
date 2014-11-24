@@ -2,7 +2,7 @@
 var button = document.querySelector('.start');
 function startLoading(){
 
-	button.disabled = true;
+	// button.disabled = true;
 	var progress = document.createElement('paper-progress');
 	loop = document.createAttribute('indeterminate');
 	progress.setAttributeNode(loop);

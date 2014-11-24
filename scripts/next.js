@@ -23,7 +23,7 @@ document.querySelector('.start').onclick = function(e) {
             createmap();
             startLoading();
             gamehome.style.display = "none"; // change depending on the current page
-            // when sone loading, display map
+            // when done loading, display map
             var map = document.getElementById("map"); 
             // map.style.display = "";
             mapClickListener();

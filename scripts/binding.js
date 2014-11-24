@@ -4,6 +4,7 @@ var tabs = document.getElementById('tabs');
 var aboutpages = document.getElementById('aboutpages');
 var gamepages = document.getElementById('gamepages');
 var gamehome = document.getElementById('gamehome');
+var button = document.querySelector('.start');
 tabs.addEventListener('core-select', function() {
   // home page selected
   if(tabs.selected == 0){ 
@@ -18,6 +19,7 @@ tabs.addEventListener('core-select', function() {
     gamepages.style.display = "";
     gamehome.style.display = "";
     aboutpages.style.display = "none";
+    button.disabled = false;
   } // about page selected
   else if (tabs.selected == 2){
     pages.style.display = "none";

@@ -21,6 +21,9 @@ function createmap() {
             col.value = j;
             space.setAttributeNode(col);
             space.setAttributeNode(row);
+            if (j == 0 && i == 0){
+                setIcon();
+            }
         }
     }
 }
