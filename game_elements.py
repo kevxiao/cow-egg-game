@@ -1,6 +1,11 @@
 from google.appengine.api import background_thread
+from google.appengine.ext import db
 
 import time
+
+class Player(db.Model):
+  name = db.StringProperty()
+  status = db.StringProperty()
 
 # class to set up each team
 class Team(object):
@@ -29,7 +34,8 @@ class Team(object):
 
 class Map(object):
 
-
+	def __init__(self, size):
+		map_grid = [[None for x in range(5)] for x in range(5)]
 
 # parent class for game elements
 class GameElement(object):
