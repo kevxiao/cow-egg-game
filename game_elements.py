@@ -4,8 +4,8 @@ from google.appengine.ext import db
 import time
 
 class Player(db.Model):
-  name = db.StringProperty()
-  status = db.StringProperty()
+	name = db.StringProperty()
+	status = db.StringProperty()
 
 # class to set up each team
 class Team(object):
@@ -18,11 +18,11 @@ class Team(object):
 
 	# return player 1 of the team
 	def getPlayer1(self):
-		return player1
+		return self.player1
 
 	# return player 2 of the team
 	def getPlayer2(self):
-		return player2
+		return self.player2
 
 	# increase resource for the team
 	def gainResource(self, a):
@@ -61,16 +61,16 @@ class GameElement(object):
 	# checks if player has vision of the element
 	def hasVision(self, u):
 		if u in self.vision:
-			return true
+			return True
 		else:
-			return false
+			return False
 
 	# checks if player has control of the element
 	def hasControl(self, u):
 		if u in self.control:
-			return true
+			return True
 		else:
-			return false
+			return False
 
 	# check the health of the element
 	def getHealth(self):
@@ -82,7 +82,7 @@ class Structures(GameElement):
 	# initialize structure with everything from game element plus armour value
 	def __init__(self, t, all_t, x, y, h, r, a):
 		self.armour = a 				# armour value to reduce damage
-		super(Structures, self).__init__(t, all_t, x, y, h, r):
+		super(Structures, self).__init__(t, all_t, x, y, h, r)
 
 	# reduces health based on damage taken
 	def takeDamage(self, d):
@@ -97,7 +97,7 @@ class Units(GameElement):
 	# initialize unit with everything from game element plus move speed value
 	def __init__(self, t, all_t, x, y, h, r, m):
 		self.move_speed = m 			# time to move one grid unit
-		super(Units, self).__init__(t, all_t, x, y, h, r):
+		super(Units, self).__init__(t, all_t, x, y, h, r)
 
 	# reduces health based on damage taken
 	def takeDamage(self, d):
@@ -105,8 +105,8 @@ class Units(GameElement):
 
 	# moves the unit one block if possible
 	def move(self, u, x, y):
-		x_diff = x - x_location
-		y_diff = y - y_location
+		x_diff = x - self.x_location
+		y_diff = y - self.y_location
 		if super(Units, self).hasControl(u):
 			if self.y_location % 2 == 0:
 				if abs(y_diff) == 1 and x_diff == -1:
@@ -149,9 +149,9 @@ class Barn(Structures):
 	# makes a new unit
 	def makeCow(self, u, t):
 		if super(Barn, self).hasControl(u):
-			if self.belong.resource >= units[t]["resource"]:
-				self.belong.loseResource(units[t]["resource"])
-				time.sleep(units[t]["time"])
+			if self.belong.resource >= self.units[t]["resource"]:
+				self.belong.loseResource(self.units[t]["resource"])
+				time.sleep(self.units[t]["time"])
 				# insert code to put unit on map
 
 # class for the builder unit
@@ -167,9 +167,9 @@ class Builder(Units):
 	# make a new structure
 	def makeStruct(self, u, t):
 		if super(Builder, self).hasControl(u):
-			if self.belong.resource >= structures[t]["resource"]:
-				self.belong.loseResource(structures[t]["resource"])
-				time.sleep(structures[t]["time"])
+			if self.belong.resource >= self.structures[t]["resource"]:
+				self.belong.loseResource(self.structures[t]["resource"])
+				time.sleep(self.structures[t]["time"])
 				# insert code to put structure on map
 
 # class for the fighter unit
@@ -177,11 +177,11 @@ class Fighter(Units):
 
 	# initialize fighter with team, all teams in game, x position and y position
 	def __init__(self, t, all_t, x, y):
-		super(Builder, self).__init__(self, t, all_t, x, y, 70, "cow", 1.2)
+		super(Fighter, self).__init__(self, t, all_t, x, y, 70, "cow", 1.2)
 		self.damage = 10
 
 	# attack enemies on the same location
 	def attack(self, u):
 		# for all units on the same location
-			if ele.belongsTo() != self.belongs:
-				ele.takeDamage(self.damage)
+			if u.belongsTo() != self.belongs:
+				u.takeDamage(self.damage)

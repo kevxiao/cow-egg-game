@@ -1,9 +1,10 @@
 from google.appengine.api import users
 from google.appengine.ext.webapp import template
+from google.appengine.ext.webapp.util import run_wsgi_app
 from google.appengine.api import channel
 from google.appengine.ext import db
 from google.appengine.api import background_thread
-#from game_elements import *
+from game_elements import *
 
 import webapp2
 import json
@@ -17,8 +18,8 @@ class GamePage(webapp2.RequestHandler):
 		self.response.out.write(template.render("main.html", {}))
 
 	def post(self):
-		row = self.request.get('row')
-		col = self.request.get('col')
+		self.row = self.request.get('row')
+		self.col = self.request.get('col')
 
 class StartGame(webapp2.RequestHandler):
 
