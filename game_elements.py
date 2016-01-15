@@ -183,5 +183,5 @@ class Fighter(Units):
 	# attack enemies on the same location
 	def attack(self, u):
 		# for all units on the same location
-			if u.belongsTo() != self.belongs:
+			if u.belongsTo() != self.belong:
 				u.takeDamage(self.damage)
